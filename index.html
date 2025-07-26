@@ -1,49 +1,79 @@
 <!DOCTYPE html>
-<html lang="tr">
+<html lang="tr" class="dark">
+
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>MS Webworks | Mustafa</title>
-  <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>MS Webworks</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    // Tema değişimi için Tailwind dark mode toggle
+    if (localStorage.getItem('theme') === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+      document.documentElement.classList.add('dark')
+    } else {
+      document.documentElement.classList.remove('dark')
+    }
+  </script>
 </head>
-<body>
-  <header>
-    <h1>👋 Merhaba, ben <span>Mustafa</span></h1>
-    <p>Front-End Geliştirici & Web Tasarımcısı</p>
-    <nav>
-      <a href="#about">Hakkımda</a>
-      <a href="#projects">Projeler</a>
-      <a href="#contact">İletişim</a>
-    </nav>
+
+<body class="bg-white dark:bg-gray-900 text-gray-900 dark:text-gray-100 font-sans transition-colors duration-300">
+  <header class="flex justify-between items-center p-6 max-w-5xl mx-auto">
+    <h1 class="text-3xl font-bold">MS Webworks</h1>
+    <button onclick="toggleTheme()" class="text-sm border px-3 py-1 rounded hover:bg-gray-100 dark:hover:bg-gray-800 transition">Tema Değiştir</button>
   </header>
 
-  <main>
-    <section id="about">
-      <h2>💡 Hakkımda</h2>
-      <p>HTML, CSS, JavaScript ve ReactJS ile modern arayüzler geliştiriyorum. Web Tasarımı ve Kodlama bölümü öğrencisiyim. jQuery’yi de severim.</p>
+  <main class="max-w-5xl mx-auto px-6">
+    <section class="my-12 text-center">
+      <img src="https://avatars.githubusercontent.com/u/9919?s=200&v=4" alt="avatar" class="mx-auto w-24 h-24 rounded-full border-4 border-gray-300 dark:border-gray-700 mb-4">
+      <h2 class="text-2xl font-semibold">Merhaba, ben Mustafa</h2>
+      <p class="mt-2 text-gray-600 dark:text-gray-400">Frontend geliştirici & web tasarım meraklısı</p>
     </section>
 
-    <section id="projects">
-      <h2>🛠️ Projelerim</h2>
-      <ul>
-        <li>🚧 Şu an portföy sayfamı geliştiriyorum.</li>
-        <li>Yakında buraya projeler gelecek!</li>
+    <section class="my-12">
+      <h3 class="text-xl font-semibold mb-4 border-b pb-2">🛠️ Yetenekler</h3>
+      <div class="flex flex-wrap gap-3">
+        <span class="bg-blue-100 text-blue-800 dark:bg-blue-800 dark:text-blue-100 px-3 py-1 rounded-full text-sm">HTML</span>
+        <span class="bg-green-100 text-green-800 dark:bg-green-800 dark:text-green-100 px-3 py-1 rounded-full text-sm">CSS</span>
+        <span class="bg-yellow-100 text-yellow-800 dark:bg-yellow-800 dark:text-yellow-100 px-3 py-1 rounded-full text-sm">JavaScript</span>
+        <span class="bg-purple-100 text-purple-800 dark:bg-purple-800 dark:text-purple-100 px-3 py-1 rounded-full text-sm">React</span>
+        <span class="bg-pink-100 text-pink-800 dark:bg-pink-800 dark:text-pink-100 px-3 py-1 rounded-full text-sm">jQuery</span>
+        <span class="bg-teal-100 text-teal-800 dark:bg-teal-800 dark:text-teal-100 px-3 py-1 rounded-full text-sm">TailwindCSS</span>
+      </div>
+    </section>
+
+    <section class="my-12">
+      <h3 class="text-xl font-semibold mb-4 border-b pb-2">📂 Projelerim</h3>
+      <ul class="space-y-4">
+        <li class="p-4 border dark:border-gray-700 rounded-lg hover:shadow-lg transition">
+          <strong>Portfolio Site</strong>
+          <p class="text-sm text-gray-600 dark:text-gray-400">Kendi portföy sitem, sade ve hızlı yapıda.</p>
+        </li>
+        <li class="p-4 border dark:border-gray-700 rounded-lg hover:shadow-lg transition">
+          <strong>React Todo App</strong>
+          <p class="text-sm text-gray-600 dark:text-gray-400">React kullanılarak yapılan basit bir görev takip uygulaması.</p>
+        </li>
       </ul>
     </section>
 
-    <section id="contact">
-      <h2>📫 Bana Ulaşın</h2>
-      <p><strong>Email:</strong> musti_591@hotmail.com</p>
-      <p>
-        <a href="https://linkedin.com/in/mustafasalihoglu" target="_blank">LinkedIn</a>
-        •
-        <a href="https://github.com/mustifbk" target="_blank">GitHub</a>
-      </p>
+    <section class="my-12 text-center">
+      <h3 class="text-xl font-semibold mb-4 border-b pb-2">🔗 Bağlantılar</h3>
+      <div class="flex justify-center gap-4">
+        <a href="https://github.com/mustifbk" target="_blank" class="px-4 py-2 bg-gray-200 dark:bg-gray-700 rounded hover:bg-gray-300 dark:hover:bg-gray-600 transition">GitHub</a>
+        <a href="#" class="px-4 py-2 bg-gray-200 dark:bg-gray-700 rounded hover:bg-gray-300 dark:hover:bg-gray-600 transition">LinkedIn</a>
+      </div>
     </section>
   </main>
 
-  <footer>
-    <p>© 2025 Mustafa | mswebworks.github.io</p>
+  <footer class="mt-20 text-center text-sm text-gray-500 dark:text-gray-400 pb-6">
+    <p>© 2025 MS Webworks — "Kod yazarken çay içmeyi unutmam."</p>
   </footer>
+
+  <script>
+    function toggleTheme() {
+      document.documentElement.classList.toggle('dark');
+      localStorage.setItem('theme', document.documentElement.classList.contains('dark') ? 'dark' : 'light');
+    }
+  </script>
 </body>
+
 </html>
